@@ -6,15 +6,16 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes')
 const trackRoutes = require('./routes/trackRoutes')
 const requireAuth = require('./middlewares/requireAuth')
-import {mongoUri} from './uri.ts'
+const MongoUri = require('./uri.ts')
+ 
 const app = express()
 
 app.use(bodyParser.json())
 app.use(authRoutes)
-app.use(trackRoutes)
+app.use(trackRoutes) 
 
- 
-mongoose.connect(mongoUri)
+  
+mongoose.connect(MongoUri.mongoUri)
 app.get('/',requireAuth, (req, res) => {
   res.send(`your email: ${req.user.email}`)
 })
