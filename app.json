@@ -3,9 +3,9 @@
     "name": "tracks",
     "slug": "tracks",
     "version": "1.0.0",
-    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "orientation": "default",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -18,7 +18,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "requireFullScreen": true
     },
     "android": {
       "adaptiveIcon": {
@@ -34,6 +35,14 @@
       "eas": {
         "projectId": "b401b185-9a78-4dd3-abdf-2d9fe6067dd6"
       }
-    }
+    },
+    "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "orientation": "default"
+        }
+      ]
+    ]
   }
 }

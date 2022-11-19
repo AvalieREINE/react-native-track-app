@@ -1,5 +1,5 @@
 //import '../_mockLocation';
-import { StyleSheet, Text, View, SafeAreaView, Button , Linking, } from 'react-native'
+import { StyleSheet, Text, View, SafeAreaView, Button , Linking, ScrollView, } from 'react-native'
 import { useIsFocused } from '@react-navigation/native';
 import React, { useContext,useCallback} from 'react'
 import Map from '../components/Map'
@@ -19,16 +19,15 @@ const [err] = useLocation(isFocused || recording,callback)
 
 
   return (
-    <SafeAreaView>
-
+    <SafeAreaView  >
+    <ScrollView>
       <Map />
      <Button title="Go to permission settings" onPress={() => { Linking.openURL('app-settings:') }} /> 
       {err ? <Text>Please enable location services</Text> : null}
      <TrackForm />
+     </ScrollView>
     </SafeAreaView>
   )
 }
 
 export default TrackCreateScreen
-
-const styles = StyleSheet.create({})

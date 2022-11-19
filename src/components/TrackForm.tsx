@@ -10,7 +10,7 @@ const TrackForm = () => {
   const [saveTrack] = useSaveTrack()
   
   return (
-    <View style={{alignItems: 'center' , marginTop: 20}}>
+    <View style={{alignItems: 'center' , marginTop: 20 }}>
     <Input  placeholder='Enter name' onChangeText={changeName} value={name} />
     {recording ?<Button 
       title="Stop  "
